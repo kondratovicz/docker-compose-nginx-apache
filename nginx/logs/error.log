@@ -64,3 +64,13 @@
 2024/08/21 16:10:18 [notice] 1#1: signal 17 (SIGCHLD) received from 23
 2024/08/21 16:10:18 [notice] 1#1: worker process 23 exited with code 0
 2024/08/21 16:10:18 [notice] 1#1: exit
+2024/08/21 18:04:53 [notice] 1#1: using the "epoll" event method
+2024/08/21 18:04:53 [notice] 1#1: nginx/1.27.1
+2024/08/21 18:04:53 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/08/21 18:04:53 [notice] 1#1: OS: Linux 6.5.0-1023-oracle
+2024/08/21 18:04:53 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/08/21 18:04:53 [notice] 1#1: start worker processes
+2024/08/21 18:04:53 [notice] 1#1: start worker process 21
+2024/08/21 18:04:53 [notice] 1#1: start worker process 22
+2024/08/21 18:04:53 [notice] 1#1: start worker process 23
+2024/08/21 18:04:53 [notice] 1#1: start worker process 24
