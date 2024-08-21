@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/certs:/etc/nginx/certs
+    depends_on:
+      - apache
+
+  apache:
+    image: php:8.3-apache
+    container_name: apache
+    volumes:
+      - ./apache/htdocs:/var/www/html
+      - ./apache/php:/usr/local/etc/php
+    environment:
+      PHP_ERROR_REPORTING: 'E_ALL & ~E_DEPRECATED & ~E_STRICT'
+      PHP_MEMORY_LIMIT: 256M
+      PHP_MAX_UPLOAD: 50M
+      PHP_MAX_EXECUTION_TIME: 30
+    expose:
+      - "80"
+
