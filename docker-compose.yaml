@@ -41,3 +41,6 @@ services:
       - TZ=Europe/Paris
     expose:
       - "80"
+
+volumes:
+  freshrss_data:
