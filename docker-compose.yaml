@@ -11,7 +11,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/logs:/var/log/nginx
       - ./nginx/certs:/etc/nginx/certs
-      - ./nginx/static:/www/data/images
+      - ./nginx/static:/www/data/images/
 
     depends_on:
       - apache
