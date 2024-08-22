@@ -12,8 +12,10 @@ services:
       - ./nginx/logs:/var/log/nginx
       - ./nginx/certs:/etc/nginx/certs
       - ./nginx/static:/www/data/images
+
     depends_on:
       - apache
+      - freshrss
 
   apache:
     image: php:8.3-apache
@@ -29,3 +31,13 @@ services:
     expose:
       - "80"
 
+  freshrss:
+    image: freshrss/freshrss:latest
+    container_name: freshrss
+    volumes:
+      - freshrss_data:/var/www/FreshRSS/data
+    environment:
+      - CRON_MIN=*/20
+      - TZ=Europe/Paris
+    expose:
+      - "80"
