@@ -11,6 +11,7 @@
     <p>This is the test homepage.</p>
     <p><a href="info.php">PHP Info</a></p>
     <p><a href="contact.php">Contact</a></p>
+    <p><a href="date_image.php">Date & Image</a></p>
 </body>
 </html>
 
