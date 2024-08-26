@@ -1,6 +1,6 @@
 <?php
-header('Content-Type: image/png');
-$image = imagecreatefromjpeg('/var/www/static/images/clock.png');
+header('Content-Type: image/jpg');
+$image = imagecreatefromjpeg('/var/www/static/images/clock.jpg');
 
 $color = imagecolorallocate($image, 255, 255, 255);
 $font = 5;
