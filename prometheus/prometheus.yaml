@@ -28,5 +28,5 @@ scrape_configs:
   scheme: http
   static_configs:
   - targets:
-    - 'nginx:80'   # Replace with your container name and port
+    - 'nginx:80'
 

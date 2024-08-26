@@ -41,9 +41,6 @@ services:
     expose:
       - "80"
 
-volumes:
-  freshrss_data:
-
   prometheus:
     image: prom/prometheus
     container_name: prometheus
@@ -57,3 +54,4 @@ volumes:
       - prom_data:/prometheus
 volumes:
   prom_data:
+  freshrss_data:
