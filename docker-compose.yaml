@@ -5,17 +5,26 @@ services:
     image: nginx:latest
     container_name: nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/logs:/var/log/nginx
       - ./nginx/certs:/etc/nginx/certs
       - ./nginx/static:/www/data/images/
-
     depends_on:
       - apache
       - freshrss
+
+  nginx-exporter:
+    image: nginx-prometheus-exporter:latest
+    container_name: nginx-exporter
+    ports:
+      - 9113:9113
+    depends_on:
+      - nginx
+    command:
+      - '-nginx.scrape-uri=http://nginx:80/stub_status'
 
   apache:
     image: php:8.3-apache
@@ -29,7 +38,7 @@ services:
       PHP_MAX_UPLOAD: 50M
       PHP_MAX_EXECUTION_TIME: 30
     expose:
-      - "80"
+      - 80
 
   freshrss:
     image: freshrss/freshrss:latest
@@ -39,7 +48,7 @@ services:
     environment:
       - CRON_MIN=*/20
     expose:
-      - "80"
+      - 80
 
   prometheus:
     image: prom/prometheus

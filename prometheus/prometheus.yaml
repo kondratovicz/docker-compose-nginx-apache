@@ -22,11 +22,8 @@ scrape_configs:
   - targets:
     - localhost:9090
 
-- job_name: 'docker_containers'
-  scrape_interval: 15s
-  metrics_path: /metrics
-  scheme: http
+- job_name: 'nginx'
   static_configs:
   - targets:
-    - 'nginx:80'
+    - 'nginx-exporter:9113'
 
