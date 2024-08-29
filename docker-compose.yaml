@@ -17,7 +17,7 @@ services:
       - freshrss
 
   nginx-exporter:
-    image: nginx-prometheus-exporter:latest
+    image: nginx/nginx-prometheus-exporter:latest
     container_name: nginx-exporter
     ports:
       - 9113:9113
